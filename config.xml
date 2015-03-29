@@ -18,7 +18,9 @@
     
 
     <!-- Plugins -->
-    <gap:plugin name="it.adacto.cordova.device" version="0.1" />
-    <gap:plugin name="com.logilite.vision.camera" version="0.2.11" />
-    <gap:plugin name="fi.avaus.cordova.geolocation" version="0.3.11" />
+    <cdv:plugin name="org.apache.cordova.console" />
+    <cdv:plugin name="org.apache.cordova.device" />
+    <cdv:plugin name="org.apache.cordova.geolocation" />
+    <cdv:plugin name="org.apache.cordova.camera" />
+    <cdv:plugin name="org.apache.cordova.contacts" />
 </widget>
