@@ -29,21 +29,16 @@ var EmployeeView = function(employee) {
 	      alert("Camera API not supported", "Error");
 	      return;
 	  }
-	  var options =   {   quality: 50,
-	                      destinationType: Camera.DestinationType.DATA_URL,
-	                      sourceType: Camera.PictureSourceType.CAMERA,
-	                      encodingType: 0     // 0=JPG 1=PNG
-	                  };
-
 	  navigator.camera.getPicture(
-	      function(imgData) {
-	          $('.media-object', this.$el).attr('src', "data:image/jpeg;base64,"+imgData);
-	      },
-	      function() {
-	          alert('Error taking picture', 'Error');
-	      },
-	      options);
-
+	  	function(imageURI) {
+		    var image = document.getElementById('myImage');
+		    image.src = imageURI;
+		},
+		function(message) {
+		    alert('Failed because: ' + message);
+		}, 
+		{ quality: 50, destinationType: Camera.DestinationType.FILE_URI }
+	  );
 	  return false;
 	};
 
